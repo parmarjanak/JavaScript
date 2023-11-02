@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        ul
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;   
+        }
+        ul li
+        {
+            list-style: none;
+        }
+        ul li a  
+        {
+            position: relative;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 4em;
+            text-decoration: none;
+            color: #ffff;
+            transition: 0.2s;
+        }
+        .cursor
+        {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffff;
+            transition: 0.1s;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+            mix-blend-mode: difference;
+            box-shadow: 10px 10px 1500px  chartreuse ;
+        }
+        ul li:hover ~ .cursor
+        {
+            transform: scale(6);
+            background: white;
+           
+        }
+    
+       
+    </style>
+</head>
+<body>
+    
+<ul>
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">ABOUT</a></li>
+    <li><a href="#">PORTFOLIA</a></li>
+    <li><a href="#">BLOG</a></li>
+    <li><a href="#">VLOG</a></li>
+    <li><a href="#">CONTECT</a></li>
+    <div class="cursor"></div>
+</ul>
+
+        <script>
+                 const ram = document.querySelector(".cursor")
+                 document.addEventListener('mousemove', (e) =>
+                 {
+                    ram.style.left = e.pageX + "px";
+                    ram.style.top = e.pageY + "px";
+                 })
+
+        </script>
+
+</body>
+</html>
